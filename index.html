@@ -109,7 +109,7 @@
             class="elevation-12 mb-12"
             size="128"
           >
-            <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+            <v-img src="img/get-shit-done-03.jpg"></v-img>
           </v-avatar>
 
           <div></div>
@@ -149,7 +149,7 @@
 
           <v-row>
             <v-col
-              v-for="({ icon, title, text }, i) in features"
+              v-for="({ title, text, filename }, i) in features"
               :key="i"
               cols="12"
               md="4"
@@ -165,10 +165,10 @@
                       color="primary"
                       size="128"
                     >
-                      <v-icon
-                        large
-                        v-text="icon"
-                      ></v-icon>
+                    <v-img
+                    v-bind:src="filename"
+                      alt="John"
+                    >
                     </v-avatar>
                   </div>
                 </v-theme-provider>
@@ -238,7 +238,7 @@
 
           <v-row>
             <v-col
-              v-for="({ src, text, title }, i) in articles"
+              v-for="({ src, text, title, path }, i) in articles"
               :key="i"
               cols="12"
               md="4"
@@ -263,6 +263,8 @@
               <v-btn
                 class="ml-n4 font-weight-black"
                 text
+                :to="path"
+                target="_blank"
               >
                 Continue Reading
               </v-btn>
@@ -283,7 +285,7 @@
         <div class="py-12"></div>
 
         <v-container>
-          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contact Me</h2>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contato</h2>
 
           <v-responsive
             class="mx-auto mb-12"
@@ -295,51 +297,58 @@
           </v-responsive>
 
           <v-theme-provider light>
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Name*"
-                  solo
-                ></v-text-field>
-              </v-col>
+            <v-form action="https://formspree.io/f/moqpobol" method="POST">
+              <v-row>
+                <v-col cols="12">
+                  <v-text-field
+                    flat
+                    label="Nome*"
+                    solo
+                    name="name"
+                  ></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Email*"
-                  solo
-                ></v-text-field>
-              </v-col>
+                <v-col cols="12">
+                  <v-text-field
+                    flat
+                    label="Email*"
+                    solo
+                    name="_replyto"
+                  ></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Subject*"
-                  solo
-                ></v-text-field>
-              </v-col>
+                <v-col cols="12">
+                  <v-text-field
+                    flat
+                    label="Assunto*"
+                    solo
+                    name="subject"
+                  ></v-text-field>
+                </v-col>
 
-              <v-col cols="12">
-                <v-textarea
-                  flat
-                  label="Message*"
-                  solo
-                ></v-textarea>
-              </v-col>
+                <v-col cols="12">
+                  <v-textarea
+                    flat
+                    label="Mensagem*"
+                    solo
+                    name="message"
+                  ></v-textarea>
+                </v-col>
 
-              <v-col
-                class="mx-auto"
-                cols="auto"
-              >
-                <v-btn
-                  color="accent"
-                  x-large
+                <v-col
+                  class="mx-auto"
+                  cols="auto"
                 >
-                  Submit
-                </v-btn>
-              </v-col>
-            </v-row>
+                  <v-btn
+                    color="accent"
+                    x-large
+                    type="submit"
+                  >
+                    Enviar
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-form>
           </v-theme-provider>
         </v-container>
 
@@ -368,36 +377,39 @@
       return {
         articles: [
           {
-            src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-            title: 'Mobile first & Responsive',
-            text: 'Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.',
+            src: 'https://i.imgflip.com/40srh9.jpg',
+            title: 'The simple and definitive guide to learn programming.',
+            text: 'Trying to learn programming? Maybe you arrived here with frustration already. You are trying to learn and get no progress no matter what...',
+            path: 'https://rodtimoteo.com/the-simple-and-definitive-guide-to-learn-programming/'
           },
           {
             src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
             title: 'Think outside the box',
             text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
+            path: ''
           },
           {
             src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
             title: 'Small changes, big difference',
             text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
+            path: ''
           },
         ],
         features: [
           {
-            icon: 'mdi-account-group-outline',
             title: 'Vinicius Bueno',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            filename: "img/vini.jpeg"
           },
           {
-            icon: 'mdi-update',
             title: 'Bruno Galvão ',
             text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
+            filename: "img/bruno.jpg"
           },
           {
-            icon: 'mdi-shield-outline',
             title: 'Rodolpho Timóteo',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            filename: "img/rod.jpg"
           },
         ],
         stats: [

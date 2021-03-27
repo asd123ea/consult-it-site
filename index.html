@@ -202,7 +202,7 @@
                 v-for="[value, title] of stats"
                 :key="title"
                 cols="12"
-                md="3"
+                md="4"
               >
                 <div class="text-center">
                   <div
@@ -263,10 +263,9 @@
               <v-btn
                 class="ml-n4 font-weight-black"
                 text
-                :to="path"
-                target="_blank"
+                v-bind:href="path" target="_blank"
               >
-                Continue Reading
+                Continue lendo
               </v-btn>
             </v-col>
           </v-row>
@@ -383,22 +382,22 @@
             path: 'https://rodtimoteo.com/the-simple-and-definitive-guide-to-learn-programming/'
           },
           {
-            src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-            title: 'Think outside the box',
-            text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
-            path: ''
+            src: 'https://miro.medium.com/max/1024/1*H53H7hTwiUyr9M3IqeENcQ.png',
+            title: 'Choosing the right technology for a microservice.',
+            text: 'Your journey in writing a microservice begins with choosing the right technology. A microservice is an independent software that ...',
+            path: 'https://rodtimoteo.com/choosing-the-right-technology-for-a-microservice/'
           },
           {
-            src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
-            title: 'Small changes, big difference',
-            text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
-            path: ''
+            src: 'https://d2ga8dje9bus38.cloudfront.net/V3s4nuHSfCTAbonO05ao_verlocal_diy_pottery_sculpture_class_workshop_in_san_francisco.jpg',
+            title: 'Building a rich domain model from anemic entities',
+            text: '“Anemic” domain entities are entities without behavior. They are a bunch of classes fulled of getter and setters that offers nothing...',
+            path: 'https://rodtimoteo.com/building-a-rich-domain-model-from-anemic-entities/'
           },
         ],
         features: [
           {
             title: 'Vinicius Bueno',
-            text: 'Vinícius é especialista em dados, modelagem financeira e processos de vendas. Formado em Ciências Contábeis pela USP é fascinado por tecnologia e possui vasta experiência atuando em instifuições financeiras e fintechs.',
+            text: 'Vinícius é especialista em dados, modelagem financeira e processos de vendas. Formado em Ciências Contábeis pela USP, é fascinado por tecnologia e possui vasta experiência atuando em instituições financeiras e fintechs.',
             filename: "img/vini.jpeg"
           },
           {
@@ -408,15 +407,15 @@
           },
           {
             title: 'Rodolpho Timóteo',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            text: 'Atua em programação, arquitetura e DevOps. É agnóstico de metodologia e tecnologia, buscando encontrar a solução ideal para cada problema.',
             filename: "img/rod.jpg"
           },
         ],
         stats: [
-          ['24k', 'Github Stars'],
-          ['330+', 'Releases'],
-          ['1m', 'Downloads/mo'],
-          ['5m', 'Total Downloads'],
+          ['12', 'Artigos Publicados'],
+          ['4', 'Projetos Concluídos'],
+          ['1', 'Monolitos Migrados'],
+          //['5m', 'Total Downloads'],
         ],
       }
     }
